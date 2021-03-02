@@ -14,7 +14,7 @@
     <!-- TODO #1 - Use a loop to display job results in a table. -->
     <table class="job-listing">
             <tr th:each="job : ${jobs}">
-                <p th:utext="${job.toHTML()}"></p>
+                <td th:utext="${job.toHTML()}"></td>
                 <br>
             </tr>
     </table>
