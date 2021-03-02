@@ -29,6 +29,35 @@ public class Job {
         coreCompetency = aCoreCompetency;
     }
 
+    // Custom toHTML method.
+
+    public String toHTML(){
+        String output = "";
+        if (name.equals("")){
+            name = "Data not available";
+        }
+        if (employer.getValue().equals("") || employer.getValue() == null){
+            employer.setValue("Data not available");
+        }
+        if (location.getValue().equals("") || location.getValue() == null){
+            location.setValue("Data not available");
+        }
+        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null){
+            coreCompetency.setValue("Data not available");
+        }
+        if (positionType.getValue().equals("") || positionType.getValue() == null){
+            positionType.setValue("Data not available");
+        }
+
+        output = "<p>ID: " + id + "</p>" +
+                "<p>Name: " + name + "</p>" +
+                "<p>Employer: " + employer + "</p>" +
+                "<p>Location: " + location + "</p>" +
+                "<p>Position Type: " + positionType + "</p>" +
+                "<p>Core Competency: " + coreCompetency + "</p>";
+        return output;
+    }
+
     // Custom toString method.
     @Override
     public String toString(){
